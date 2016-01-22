@@ -17,8 +17,7 @@ func info(c *gin.Context) {
 	}
 	defer db.Close()
 
-	// ip := net.IP(c.Request.RemoteAddr)
-	ip := net.ParseIP("73.200.70.234")
+	ip := net.IP(c.Request.RemoteAddr)
 	fmt.Println(ip)
 	record, err := db.City(ip)
 	if err != nil {
